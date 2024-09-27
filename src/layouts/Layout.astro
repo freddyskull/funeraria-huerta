@@ -1,50 +1,85 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
+import Header from "../components/header.astro";
+import Slides from "../components/slides.astro";
+import Servicios from "../components/servicios.astro";
+import Nosotros from "../components/nosotros.astro";
+import Banner from "../components/banner.astro";
+import Galeria from "../components/galeria.astro";
+import Ubicacion from "../components/ubicacion.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>La Huerta</title>
+  </head>
+  <body>
+    <Header />
+    <Slides />
+    <Nosotros />
+    <Banner />
+    <Servicios />
+    <Galeria />
+    <Ubicacion />
+    <!-- <slot /> -->
+    <div class="wsp-btn">
+      <a href="https://wa.me/528110822500" class="flex justify-center items-center" target="_blank">
+        <i class="fa-brands fa-whatsapp text-[25px]"></i>
+      </a>
+    </div>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  .wsp-btn {
+    padding: 10px 12px;
+    position: fixed;
+    background: #3eb94e;
+	border-radius: 100px;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+	/* box-shadow: 10px 10px 86px 0px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 10px 10px 86px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 10px 10px 86px 0px rgba(0,0,0,0.5); */
+	transition: 0.2s;
+  }
+  .wsp-btn:hover {
+	transform: scale(1.2);
+  }
+  .wsp-btn i{
+	color: white;
+	font-size: 40px;
+  }
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
 </style>

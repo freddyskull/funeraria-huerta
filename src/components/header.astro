@@ -2,7 +2,7 @@
 const { navbar } = Astro.props;
 ---
 
-<div class="grid grid-cols-3 md:flex justify-between gap-16 navbar">
+<div class="grid grid-cols-3 md:flex justify-between navbar">
   <div
     class="social flex items-center md:w-1/4 pl-5 md:pl-20 md:hidden xl:flex"
   >
@@ -24,14 +24,14 @@ const { navbar } = Astro.props;
     </div> -->
   </div>
   <div class="md:flex justify-end items-cente hidden md:ml-12 xl:ml-0">
-    <ul class="uppercase flex gap-12 items-center">
+    <ul class="uppercase flex gap-4 lg:gap-12 items-center">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
     </ul>
   </div>
   <div class="flex justify-center">
-    <div class="rounded-full p-1 logo z-10 hidden md:block w-[150px]">
+    <div class="rounded-full p-1 logo z-10 hidden md:block min-w-[60px] max-w-[120px]">
       <a href="#inicio">
         <img
           src="logo.png"
@@ -43,7 +43,7 @@ const { navbar } = Astro.props;
     <img src="logo.png" class="md:hidden max-w-[100px]" alt="logo" />
   </div>
   <div class="md:flex justify-start items-center hidden md:mr-12 xl:mr-0">
-    <ul class="uppercase flex gap-12">
+    <ul class="uppercase flex md:gap-4 lg:gap-12">
       <li><a href="#galeria">Galería</a></li>
       <li><a href="#contacto">Ubicación</a></li>
       <li><a href="#contacto">Contacto</a></li>

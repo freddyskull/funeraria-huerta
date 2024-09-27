@@ -11,6 +11,9 @@ import Nosotros from "../components/nosotros.astro";
 import Banner from "../components/banner.astro";
 import Galeria from "../components/galeria.astro";
 import Ubicacion from "../components/ubicacion.astro";
+import NavBar from "../components/navbarMovil.astro";
+
+let navbar = false;
 ---
 
 <!doctype html>
@@ -35,7 +38,10 @@ import Ubicacion from "../components/ubicacion.astro";
     <title>La Huerta</title>
   </head>
   <body>
-    <Header />
+    <div class={!navbar && "hidden"}>
+      <NavBar />
+    </div>
+    <Header navbar={navbar} />
     <Slides />
     <Nosotros />
     <Banner />

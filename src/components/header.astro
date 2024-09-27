@@ -1,56 +1,72 @@
 ---
-
+const { navbar } = Astro.props;
 ---
 
-<div class="flex justify-between gap-16 navbar">
-  <div class="social flex items-center w-1/4 pl-20">
+<div class="grid grid-cols-3 md:flex justify-between gap-16 navbar">
+  <div
+    class="social flex items-center md:w-1/4 pl-5 md:pl-20 md:hidden xl:flex"
+  >
     <div class="flex gap-5 text-[25px]">
-      <a href="https://www.facebook.com/SERVHUERTA?mibextid=LQQJ4d" target="_blank">
+      <a
+        href="https://www.facebook.com/SERVHUERTA?mibextid=LQQJ4d"
+        target="_blank"
+      >
         <i class="fa-brands fa-facebook hover:scale-125 transition-all"></i>
       </a>
       <a href="https://wa.me/528110822500" target="_blank">
         <i class="fa-brands fa-whatsapp hover:scale-125 transition-all"></i>
       </a>
-      
     </div>
+    <!-- <div class="md:hidden">
+      <div class="border-2 p-2 flex justify-center items-center" id="navbar">
+        <i class="fa-solid fa-align-left text-slate-500 text-[20px]"></i>
+      </div>
+    </div> -->
   </div>
-  <div class="flex justify-end items-center">
-    <ul class="uppercase flex gap-12">
+  <div class="md:flex justify-end items-cente hidden md:ml-12 xl:ml-0">
+    <ul class="uppercase flex gap-12 items-center">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
     </ul>
   </div>
   <div class="flex justify-center">
-    <div class="rounded-full p-1 logo z-10">
+    <div class="rounded-full p-1 logo z-10 hidden md:block w-[150px]">
       <a href="#inicio">
         <img
           src="logo.png"
-          class="w-[150px] rounded-full hover:scale-105 transition-all"
-          alt=""
+          class="rounded-full hover:scale-105 transition-all"
+          alt="logo"
         />
       </a>
     </div>
+    <img src="logo.png" class="md:hidden max-w-[100px]" alt="logo" />
   </div>
-  <div class="flex justify-start items-center">
+  <div class="md:flex justify-start items-center hidden md:mr-12 xl:mr-0">
     <ul class="uppercase flex gap-12">
       <li><a href="#galeria">Galería</a></li>
       <li><a href="#contacto">Ubicación</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
-  <div class="social flex justify-end items-center w-1/4 pr-20 gap-2">
-    <a href="tel:8110822500" class="font-bold">
-    <div class="mr-2 border-2 p-2">
-      <i class="fa-solid fa-phone text-[30px] text-slate-500"></i>
+  <div
+    class="social flex justify-end items-center md:w-1/4 pr-5 md:pr-20 gap-2 md:hidden xl:flex"
+  >
+    <div class="flex gap-2">
+      <a href="tel:8110822500" class="font-bold">
+        <div class="mr-2 border-2 p-2 hidden md:inline-block">
+          <i class="fa-solid fa-phone text-[30px] text-slate-500"></i>
+        </div>
+        <div class="flex flex-col text-right justify-end">
+          <span class="">Contáctenos</span>
+          <a href="tel:8110822500" class="font-bold">8110822500 </a>
+        </div>
+      </a>
     </div>
-    <div class="flex flex-col">
-      <span class="mr-2">Contáctenos</span>
-      <a href="tel:8110822500" class="font-bold">8110822500 </a>
-    </div>
-  </a>
   </div>
 </div>
+
+
 
 <style>
   .navbar {
@@ -66,7 +82,7 @@
     font-weight: 500;
     color: #987f53;
   }
-  .social i:hover{
+  .social i:hover {
     color: #987f53;
   }
   .logo {
@@ -77,3 +93,15 @@
     -moz-box-shadow: 0px 11px 5px 0px rgba(0, 0, 0, 0.1);
   }
 </style>
+
+
+<script>
+const boton = document.getElementById('navbar');
+const navbar = `${Astro.props.navbar}`;
+console.log(navbar)
+  // Agrega un event listener para el evento 'click'
+  boton.addEventListener('click', () => {
+    
+  });
+
+</script>
